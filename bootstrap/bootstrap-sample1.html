@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TELEVOX Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <script>
+
+
+
+$(document).ready(function(){
+  $.ajax(
+    {
+        type: "GET",
+        url: "data.json",
+        
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        
+        success: function (data) {
+             
+        var user_data= '';
+                
+       
+         $.each(data, function (key, value) {
+
+          user_data += '<tr>';
+          user_data += '<td class="names">' + value.firstname + '</td>';
+          user_data += '<td class="names">' +value.lastname+ '</td>';
+          user_data += '<td>' +value.ID+ '</td>';
+          user_data += '<td>' +'<button type="button"  onclick= $(this).parents("tr").remove(); >X</button>'+ '</td>';
+          user_data += '</tr>'
+         
+      });
+           $('.table').append(user_data);
+        
+    }
+        
+    });
+})
+
+</script>
+
+<script>
+$(function(){
+
+  $(".form-control").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".btn-primary").on("click", function() {
+    $(".table tr").not(".header").filter(function() {
+      $(this).toggle($(this).find(".names").text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+    
+   $('.btn-secondary').on("click", function() {
+      
+      $(".table tr").show();
+    });
+
+   
+});
+
+  
+   
+});
+
+</script>
+
+</head>
+<body>
+<img src="C:\Users\تيربو للكمبيوتر\Desktop\TELEVOX.png" class="img-fluid" alt="TELEVOX LOGO" width="100%" height="60" align="left">
+<h2  class="card-title">Search</h2>
+
+
+<div class="container">  
+  <div class="jumbotron">
+    <form class="form-inline" action="/action_page.php">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search for names">
+      <button type="button" class="btn btn-primary  btn-md">Search</button><pre> </pre>
+      <button type="button" class="btn btn-secondary btn-md">Clear</button>
+    </form>
+  </div>           
+  <table class="table table-hover table-bordered table-md">
+    <thead class="thead-light">
+      <tr class="header">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>ID</th>
+        <th></th>
+      </tr>
+    </thead>
+
+  </table>
+  </div>
+
+
+
+</div>
+</body>
+</html>
