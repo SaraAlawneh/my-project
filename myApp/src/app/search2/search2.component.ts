@@ -13,27 +13,26 @@ class Person {
 }
 @Component({
   selector: 'app-search2',
-  templateUrl: './search2.component.html'
+  templateUrl: './search2.component.html',
+  styleUrls: ['./search2.component.css']
 })
 export class Search2Component implements OnInit {
   
   persons: Person[] = [];
   searchPerson: Person[];
   
-  deletePerson(index) {
-    this.persons.splice(index, 1);
-  }
+  constructor(private http: Http) { 
   
-  constructor(private http: Http) { }
+  }
 
   ngOnInit(): void {
 
-    
-    this.http.get('https://angular-datatables-demo-server.herokuapp.com')
+   
+
+    this.http.get('http://localhost:8080')
       .map(this.extractData)
       .subscribe(persons => {
         this.searchPerson = this.persons = persons;
-       
         
         
       });
@@ -42,7 +41,13 @@ export class Search2Component implements OnInit {
   }
   search(query: string){
     this.searchPerson = (query) ? this.persons.filter(person => person.firstName.toLowerCase().includes(query.toLowerCase()) ||  person.lastName.toLowerCase().includes(query.toLowerCase())) : this.persons ;
+   
   }
+  deletePerson(index) {      
+    this.searchPerson.splice(index, 1);
+  }
+
+
   private extractData(res: Response) {
     const body = res.json();
     return body.data || {};

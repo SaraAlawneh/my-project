@@ -9,7 +9,7 @@ import { Search2Component } from './search2/search2.component';
 import { DataTablesModule } from 'angular-datatables';
 import { LoginComponent } from './login/login.component';
 
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    NgxPaginationModule
   ],
  
   providers: [],

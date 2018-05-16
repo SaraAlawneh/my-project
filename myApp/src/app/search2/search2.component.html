@@ -1,28 +1,29 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
+ 
 
 <div class="container">
   <h3 class="text-md-left">Search</h3>
   <div class="jumbotron">
-    <form  class="form-inline" >
-      
-        <label>
-          <input #query  class="form-control mr-sm-2" type="text"  placeholder="Search for names"  >
-        </label>
-        <br>
-        <label>
-          <button type="button" class="btn btn-primary  btn-md" (click)="search(query.value)">search</button>
-          <pre> </pre>
+    <form class="form-inline">
 
-        </label>
+      <label>
+        <input #query class="form-control mr-sm-2" type="text" placeholder="Search for names">
+      </label>
+      <br>
+      <label>
+        <button type="button" class="btn btn-primary  btn-md" (click)="search(query.value)">search</button>
+        <pre> </pre>
 
-        <button type="button" class="btn btn-secondary btn-md" (click)="search(query.undefined)">Clear</button>
-     
+      </label>
+
+      <button type="button" class="btn btn-secondary btn-md" (click)="search(query.undefined)">Clear</button>
+
     </form>
   </div>
 
 
-  <table class="table table-hover table-bordered table-md">
+  <table   class="table table-hover table-bordered table-md">
     <thead class="thead-light">
       <tr>
         <th>First name</th>
@@ -37,10 +38,9 @@
         <td>{{ person.lastName }}</td>
         <td>{{ person.id }}</td>
         <td>
-          <button style="cursor:pointer;" (click)="deletePerson(index)">X</button>
+          <button id="del" (click)="deletePerson(index)">X</button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-
