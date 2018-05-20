@@ -12,12 +12,12 @@ class Person {
   id: number;
 }
 @Component({
-  selector: 'app-search2',
-  templateUrl: './search2.component.html',
-  styleUrls: ['./search2.component.css']
+  selector: 'app-search3',
+  templateUrl: './search3.component.html',
+  styleUrls: ['./search3.component.css']
 })
-export class Search2Component implements OnInit {
-  
+export class Search3Component implements OnInit {
+
   persons: Person[] = [];
   searchPerson: Person[];
 
@@ -28,7 +28,7 @@ export class Search2Component implements OnInit {
   ngOnInit(): void {
 
     
-    this.http.get('http://localhost:8080')
+    this.http.get('http://localhost:27017')
       .map(this.extractData)
       .subscribe(persons => {
         this.searchPerson = this.persons = persons;

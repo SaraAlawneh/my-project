@@ -9,7 +9,13 @@ var app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
-app.get('/', function (req, res) {
+app.use(function(req, res, next){
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  
+  next();
+});
+var body = app.get('/', function (req, res) {
 	
 	res.sendFile('employee.json', {root : __dirname});
 });
@@ -17,10 +23,8 @@ app.get('/', function (req, res) {
 
 app.post('/employee', function (req, res) {
   
-   
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.write(data);
-    res.end();});
+
+    res.end(JSON.stringify(body));});
   
 
    

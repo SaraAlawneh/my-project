@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { Search2Component } from './search2/search2.component';
 import { DataTablesModule } from 'angular-datatables';
 import { LoginComponent } from './login/login.component';
+import { Search3Component } from './search3/search3.component';
 
 
 
@@ -15,7 +16,8 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     Search2Component,
-    LoginComponent
+    LoginComponent,
+    Search3Component
   ],
   imports: [
     BrowserModule,
