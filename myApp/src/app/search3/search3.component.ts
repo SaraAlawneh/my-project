@@ -19,36 +19,22 @@ class Person {
 export class Search3Component implements OnInit {
 
   persons: Person[] = [];
-  searchPerson: Person[];
-
+  
   
  
   constructor(private http: Http) { }
 
   ngOnInit(): void {
 
-    
-    this.http.get('http://localhost:27017')
+    this.http.get('http://localhost:8000')
       .map(this.extractData)
       .subscribe(persons => {
-        this.searchPerson = this.persons = persons;
-       
+         this.persons = persons;
         
-        
+         console.log (persons)
       });
-    
-
   }
 
-   deletePerson(index) {      
-    this.searchPerson.splice(index, 1);
-    
-  }
-
-
-  search(query: string){
-    this.searchPerson = (query) ? this.persons.filter(person => person.firstName.toLowerCase().includes(query.toLowerCase()) ||  person.lastName.toLowerCase().includes(query.toLowerCase())) : this.persons ;
-  }
   private extractData(res: Response) {
     const body = res.json();
     return body.data || {};

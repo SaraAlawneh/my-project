@@ -22,23 +22,12 @@ export class Search2Component implements OnInit {
   searchPerson: Person[];
 
   
-<<<<<<< HEAD
  
   constructor(private http: Http) { }
 
   ngOnInit(): void {
 
     
-=======
-  constructor(private http: Http) { 
-  
-  }
-
-  ngOnInit(): void {
-
-   
-
->>>>>>> 5577dbd70d29798701ffa29d99b27e5f80c13cf7
     this.http.get('http://localhost:8080')
       .map(this.extractData)
       .subscribe(persons => {
@@ -50,10 +39,7 @@ export class Search2Component implements OnInit {
 
   }
 
-   deletePerson(index) {      
-    this.searchPerson.splice(index, 1);
-    
-  }
+  
 
 
   search(query: string){
