@@ -10,6 +10,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { LoginComponent } from './login/login.component';
 import { Search3Component } from './search3/search3.component';
 
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { Search3Component } from './search3/search3.component';
     DataTablesModule
   ],
  
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
