@@ -14,6 +14,7 @@ const sendError = (err, res) => {
 };
 
 // Response handling
+
 let response = {
     status: 200,
     data: [],

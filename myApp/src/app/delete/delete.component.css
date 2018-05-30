@@ -1,0 +1,142 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+				
+				.fieldset{ 
+					
+	   			 	margin-left: 25%;
+	    			margin-top: 10%; 
+	    			width: 400px;
+    				height: 400px;
+				    padding-top: 2em;
+					border: 2px;
+				}
+
+				.legend {
+				    color: #FFA500;
+				    background-color: #4682B4;	   
+				}
+
+				input[type=text], input[type=password] {
+   					width: 20;
+   					padding: 10px 16px;
+   					border-radius: 6px;
+    				margin: 8px 0;
+				    border: 1px solid #ccc;
+				    margin-left: 16px;
+				}
+
+				#button {
+				    background-color: #00BFFF;
+				    color: white;
+				    padding: 10px 50px;
+				    border-radius: 8px;
+				    margin: 8px 0;
+				    border: none;
+				    cursor: pointer;
+				    width: 20;
+				    margin-left: 16px;
+				    
+				}
+
+				#button:hover {
+				    opacity: 0.6;
+				}
+
+				.input {
+					margin-left: 16px;
+				}
+					
+				.tab {
+				    border: 1px solid #ccc;
+				    background-color: #f1f1f1;
+				}
+
+				.tab button {
+				    background-color: #f1f1f1;
+				    border: none;
+				    cursor: pointer;
+				    padding: 14px 16px;
+				   
+				}
+
+				.tab button:hover {
+				    background-color: #ddd;
+				}
+
+				.tab button.active {
+				    background-color: #ccc;
+				}
+
+				.tabcontent {
+				   
+				    padding: 6px 12px;
+				    border: none;
+				    border-top: none;
+				}
+
+
+				.fieldset1{ 
+	   			 	margin-left: 300px;
+	    			margin-top: 80px; 
+	    			width:500px;
+    				height:100px;
+				    padding-top: 2em;
+					border: 2px;
+
+				}
+				
+				.fieldset2{ 
+					
+	   			 	margin-left: 300px;
+	    			margin-top: 400; 
+	    			width: 500px;
+    				height: 400px;
+				    padding-top: 2em;
+					border: 2px;
+				}
+				
+				.fieldset3 { 
+				    padding-top: 2em;
+					border: none;
+					margin-left: -25px;
+
+				}
+
+				#button1  {
+					text-align:center;
+				    background-color: #00BFFF;
+				    color: white;
+				    border-radius: 8px;
+				    margin: 8px auto;
+				    border: none;
+				    cursor: pointer;
+				    width: 100px;
+				    height: 40px;
+				    margin-left: 16px;      
+				}
+				#button2  {
+				    background-color: white;
+				    color: #00BFFF;
+				    border-radius: 8px;
+				    margin: 8px 0;
+				    border: 2px solid #00BFFF;
+				    cursor: pointer;
+				    width: 100px;
+				    height:40px;
+				    margin-left: 16px;
+				    text-align: center;
+				    
+				}
+
+				#button1:hover {
+				    opacity: 0.6;
+				}
+				#button2:hover {
+   					background-color: #00BFFF;
+  					color: white;
+				}
+				.input {
+					margin-left: 16px;
+				}
+				.required{
+    				color:red;
+				}

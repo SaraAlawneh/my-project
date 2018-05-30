@@ -11,13 +11,23 @@ import { LoginComponent } from './login/login.component';
 import { Search3Component } from './search3/search3.component';
 
 import { DataService } from './data.service';
+import { UsersComponent } from './users/users.component';
+import { NewComponent } from './new/new.component';
+import { UpdateComponent } from './update/update.component';
+import { DeleteComponent } from './delete/delete.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Search2Component,
     LoginComponent,
-    Search3Component
+    Search3Component,
+    UsersComponent,
+    NewComponent,
+    UpdateComponent,
+    DeleteComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

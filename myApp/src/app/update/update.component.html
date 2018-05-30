@@ -1,0 +1,31 @@
+
+  <form action="process.php" method="post"  class="tabcontent" >
+
+
+    <fieldset class="fieldset1" style="background-color: #D3D3D3">
+      <h1>Update your profile</h1>
+      </fieldset>
+
+  <fieldset class="fieldset2" style="background-color: #f1f1f1" >
+
+    <label for="text"><b>Name</b></label>
+    <label class="input"> <input type="text" name="Username" size="15" maxlength="15" placeholder="User Name " required="required" class="tx1"><span class="required">*</span></label><br>
+      
+    <label for="email"><b>Email</b></label>
+      <input type="text" class="Enter" placeholder="Email" required="required"><span class="required">*</span> <br>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" class="Enter" placeholder="Password" name="psw" required="required"><span class="required">*</span><br>
+
+      <label for="password-confirm"><b>Confirm Password</b></label>
+      <input type="password" class="Enter" placeholder="Password" name="psw-repeat" required="required"><span class="required">*</span><br><br>
+    
+       
+       <input type="submit" id="button1" value="Save Change">
+       <input type="submit" id="button2" value="Cancel">
+
+  </fieldset>
+
+</form>
+
+<a routerLink="/users">Go Back</a>

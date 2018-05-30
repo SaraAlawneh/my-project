@@ -77,7 +77,7 @@ MongoClient.connect(url, function(err, db) {
   {"id":"392","firstName":"Someone First Name","lastName":"Lara"},
   {"id":"395","firstName":"Luke","lastName":"Bar"}
 ];
-  dbo.collection("customers").insertMany(names, function(err, res) {
+  dbo.collection("users").insertMany(names, function(err, res) {
     if (err) throw err;
     console.log(JSON.stringify('Successfully inserted!' ));
     

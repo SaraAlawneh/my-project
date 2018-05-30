@@ -37,7 +37,8 @@ export class Search3Component implements OnInit {
     this.searchUser = (query) ? this.users.filter(user => user.firstName.toLowerCase().includes(query.toLowerCase()) ||  user.lastName.toLowerCase().includes(query.toLowerCase())) : this.users ;
    
   }
-  deleteUser(index) {      
+
+   deleteUser(index) {      
     this.searchUser.splice(index, 1);
   }
    

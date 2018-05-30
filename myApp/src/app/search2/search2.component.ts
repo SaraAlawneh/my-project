@@ -28,7 +28,7 @@ export class Search2Component implements OnInit {
   ngOnInit(): void {
 
     
-    this.http.get('http://localhost:8080')
+    this.http.get('http://localhost:8000')
       .map(this.extractData)
       .subscribe(persons => {
         this.searchPerson = this.persons = persons;
