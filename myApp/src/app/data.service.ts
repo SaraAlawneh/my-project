@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
 
-import { Http, Headers, RequestOptions } from '@angular/http';
+import { Injectable } from '@angular/core';
+import {Http, Response, Headers, RequestOptions } from '@angular/http';   
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';   
+import 'rxjs/add/operator/do';  
 
 @Injectable()
 export class DataService {
@@ -12,9 +14,10 @@ export class DataService {
 
   getUsers() {
     return this._http.get("http://localhost:3000/api")
-      .map(result => this.result = result.json().data);
-  }
+    .map((response: Response)=> response.json().data);
+     
 
+  }
   
 
 }
