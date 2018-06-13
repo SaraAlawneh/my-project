@@ -14,8 +14,8 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 describe('Search3Component', () => {
   let component: Search3Component;
   let fixture: ComponentFixture<Search3Component>;
-  let element: HTMLElement;
-  let spy: jasmine.Spy;
+  //let element: HTMLElement;
+//  let spy: jasmine.Spy;
   
   beforeEach(async(() => {let DataService: DataService;
     TestBed.configureTestingModule({
@@ -64,8 +64,57 @@ describe('Search3Component', () => {
        expect(component.search).toBeTruthy("showModal should be true");
    })*/
    
+
+  
+    it('should return empty array if no field is given', () => {
+      let comp=fixture.componentInstance;
+
+      let items
+     
+  
+      const filtered = comp.search(undefined);
+  
+      expect(filtered).toEqual([]);
+    });
+
+    it('should return empty array if no matches found ', () => {
+      let comp=fixture.componentInstance;
+
+      let items=[
+
+        { "id": "135", "firstName": "Sara", "lastName": "Alawneh" },
+        { "id": "144", "firstName": "Someone First Name", "lastName": "Yoda" }];
+     
+  
+      const filtered = comp.search( 'lara');
+  
+      expect(filtered).toEqual([]);
+    });
+
+
+
+    it('should filter correctly', () => {
+      let comp=fixture.componentInstance;
+         const data=[
+
+          { "id": "135", "firstName": "Sara", "lastName": "Alawneh" },
+          { "id": "144", "firstName": "Someone First Name", "lastName": "Yoda" },
+          { "id": "154", "firstName": "Luke", "lastName": "Moliku" },
+          { "id": "155", "firstName": "Louis", "lastName": "Whateveryournameis" },
+          { "id": "156", "firstName": "Someone First Name", "lastName": "Lara" },
+          { "id": "157", "firstName": "Zed", "lastName": "Kyle" }
+
+         ];
+      // expect(comp.search('alawneh').length).toEqual(2);
+       //expect(comp.applyfilter(data,'rola','tawalbeh')[0]).toEqual(data[0]);
+    });
        
 
   });
 
 });
+       
+
+  
+
+
