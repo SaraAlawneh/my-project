@@ -23,11 +23,19 @@ export class Search3Component implements OnInit {
   
   searchUser: user[];
  
-  constructor(private _dataService: DataService) { }
+  constructor(private _dataService:DataService) { }
 
   ngOnInit(): void {
     this._dataService.getUsers()
     .subscribe(res => this.searchUser = this.users = res);
+
+    /*this.http.get('http://localhost:3000/api')
+    .map(this.extractData)
+    .subscribe(users => {
+      this.searchUser = this.users = users;
+      
+      
+    });*/
 
   }
 
@@ -40,6 +48,11 @@ export class Search3Component implements OnInit {
 
    deleteUser(index) {      
     this.searchUser.splice(index, 1);
+  }
+
+  private extractData(res: Response) {
+    const body = res.json();
+    return body.data || {};
   }
    
 }

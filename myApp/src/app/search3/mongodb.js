@@ -16,13 +16,7 @@ MongoClient.connect(url, function(err, db) {
   {"id":"154","firstName":"Luke","lastName":"Moliku"},
   {"id":"155","firstName":"Louis","lastName":"Whateveryournameis"},
   {"id":"156","firstName":"Someone First Name","lastName":"Lara"},
-  {"id":"157","firstName":"Zed","lastName":"Kyle"},
-  {"id":"161","firstName":"Foo","lastName":"Lara"},
-  {"id":"167","firstName":"Toto","lastName":"Someone Last Name"},
-  {"id":"171","firstName":"Superman","lastName":"Kyle"},
-  {"id":"175","firstName":"Luke","lastName":"Moliku"},
-  {"id":"184","firstName":"Toto","lastName":"Bar"},
-  {"id":"395","firstName":"Luke","lastName":"Bar"}
+  {"id":"157","firstName":"Zed","lastName":"Kyle"}
 ];
   dbo.collection("customers").insertMany(names, function(err, res) {
     if (err) throw err;

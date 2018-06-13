@@ -14,13 +14,13 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 describe('Search3Component', () => {
   let component: Search3Component;
   let fixture: ComponentFixture<Search3Component>;
-
-  beforeEach(async(() => {
+  let element: HTMLElement;
+  let spy: jasmine.Spy;
+  
+  beforeEach(async(() => {let DataService: DataService;
     TestBed.configureTestingModule({
-      imports: [
-        HttpModule
-    ],
-      providers: [ ConnectionBackend , HttpModule, DataService],
+      imports: [HttpModule],
+      providers: [ ConnectionBackend , HttpModule, DataService, { provide: XHRBackend, useClass: MockBackend },],
       declarations: [ Search3Component ]
     })
     .compileComponents();
@@ -35,24 +35,37 @@ describe('Search3Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-/*
-  it('search should return SearchItems', fakeAsync(() => {
-    let response = { 
-      "resultCount": 1,
-      "results": [
-        {
-          "id": "135",
-          "fistName": "Sara",
-          "lastName": "Alawneh",
-          
-        }]
-    };
-  
-    mockBackend.connections.subscribe((connection) => {
-      connection.mockRespond(new Response(new ResponseOptions({
-        body: JSON.stringify(mockResponse)
-      })));
-      
+
+ 
+
+  describe('search', function() {
+    
+    it('search should return SearchItems', () => {
+      component=fixture.componentInstance;
+      expect(component.search).toBeDefined();
     });
-  }));*/
+
+    /*it('should display the `search` button', () => {
+      //There should a create button in the template
+       expect(element.innerText).toContain(" search");
+   });
+  
+   it('should not display the search result unless the button is clicked', () => {
+       //source-model is an id for the modal. It shouldn't show up unless create button is clicked
+       expect(element.innerHTML).not.toContain("source-modal");
+   })
+  
+  /* it("should display the search result when 'search' is clicked", () => {
+       let searchButton = fixture.debugElement.query(By.css("button"));
+       //triggerEventHandler simulates a click event on the button object
+       searchButton.triggerEventHandler("click",null);
+       fixture.detectChanges();
+     //  expect(element.innerHTML).toContain("source-modal");
+       expect(component.search).toBeTruthy("showModal should be true");
+   })*/
+   
+       
+
+  });
+
 });
