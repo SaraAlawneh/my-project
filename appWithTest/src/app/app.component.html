@@ -1,0 +1,62 @@
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+<h2>users</h2>
+<div id="s"> Search:
+  <input type="text" #input1 class="search" name="text" placeholder="Search by first name " />
+  <input type="text" class="search" #input2 name="text2" placeholder="Search by lastname name " />
+  <div id="btns">
+    <button class="btn btn-info" (click)="applyfilter(users, input1.value,input2.value )">Search</button>
+    <button class="btn btn-secondary" (click)="clear()">Clear</button>
+  </div>
+</div>
+<div class="container">
+-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+  <div class="container">
+    <h3 class="text-md-left">Search</h3>
+    <div class="jumbotron">
+      <form class="form-inline">
+  
+        <label>
+          <input #query class="form-control mr-sm-2" name="text" type="text" placeholder="Search for names">
+        </label>
+        <br>
+        <label>
+          <button type="button" class="btn btn-primary  btn-md" (click)="search(users, query.value)">search</button>
+          <pre> </pre>
+  
+        </label>
+  
+        <button type="button" class="btn btn-secondary btn-md"  (click)="clear()">Clear</button>
+  
+      </form>
+    </div>
+  
+
+  <table class="table table-hover table-bordered table-md">
+    <thead class="thead-light">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>ID</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of searchUser ">
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.ID}}</td>
+        <td>
+          <button id="del" (click)="delete(searchUser,index)">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
