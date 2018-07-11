@@ -1,3 +1,4 @@
+
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,12 @@ import { NewComponent } from './new/new.component';
 import { UpdateComponent } from './update/update.component';
 import { DeleteComponent } from './delete/delete.component';
 import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +34,8 @@ import { HomeComponent } from './home/home.component';
     NewComponent,
     UpdateComponent,
     DeleteComponent,
-    HomeComponent
+    HomeComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,9 @@ import { HomeComponent } from './home/home.component';
     DataTablesModule
   ],
  
-  providers: [DataService],
+  providers: [ 
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

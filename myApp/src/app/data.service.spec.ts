@@ -6,7 +6,7 @@ import { BaseRequestOptions, ConnectionBackend, Http, RequestOptions } from '@an
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-//import { user } from './user.model'
+
 
 describe('MockBackend: DataService', () => {
   let mockbackend, service;

@@ -16,13 +16,13 @@ export class UsersComponent implements OnInit {
 
 
   btnnew = function()
-  {this.Router.navigate(['/users/new']);};
+  {this.Router.navigate(['/home/users/new']);};
  
   btnupdate= function ()
-  {this.Router.navigate(['/users/update']);};
+  {this.Router.navigate(['/home/users/update']);};
  
   btndelete= function()
-  {this.Router.navigate(['/users/delete']);};
+  {this.Router.navigate(['/home/users/delete']);};
 
   
 }

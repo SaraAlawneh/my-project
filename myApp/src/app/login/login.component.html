@@ -1,14 +1,30 @@
 <div class="fieldset" style="background-color: #f1f1f1">
-  
-  
-    <label class="input">User Name <br> <input type="text" name="username" size="30" maxlength="30" required="required" (ngModel)="name"></label><br /> <br /> 
-    <label class="input">Password <br> <input type="password" name="password" size="30" maxlength="15" required="required" (ngModel)="password"></label><br /> <br> 
-  
-  <input type="checkbox" name="remember" value="remember" class="input" /> Remember me <br> <br>
-  
-  <input type="submit" id="button" value="login" (click)= "login()" >
-  <input type="submit" id="button" value="Reset">
-  
-  
-  
-  </div>
+
+  <form (submit)="loginUser($event)">
+    <div class="input">
+      <label>User Name
+        <br>
+        <input type="text" name="username" size="30" maxlength="30" required="required" (ngModel)="name">
+      </label>
+      <br />
+      <br />
+    </div>
+    <div class="input">
+      <label>Password
+        <br>
+        <input type="password" name="password" size="30" maxlength="15" required="required" (ngModel)="password">
+      </label>
+      <br />
+      <br>
+    </div>
+    <input type="checkbox" name="remember" value="remember" class="input" /> Remember me
+    <br>
+    <br>
+    <div class="input">
+      <input type="submit" id="button" value="login">
+    </div>
+   
+
+  </form>
+
+</div>
