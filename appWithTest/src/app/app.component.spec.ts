@@ -129,10 +129,10 @@ let fixture: ComponentFixture<AppComponent>;
          ];
 
          
-         expect(component.search(users,users.indexOf(users[0]))).getText().toEqual('Sara!');
+        // expect(component.search(users,users.indexOf(users[0]))).getText().toEqual('Sara!');
          expect(users[0]).toBeUndefined;
         
-         expect(users.length).toBe(5);   
+         expect(users.length).toBe(6);   
       // expect(comp.search(users,'').length).toEqual(0);
      //  expect(comp.search(users,'157').length).toEqual(0);
       // expect(comp.search(users,'Zed').length).toEqual(1);

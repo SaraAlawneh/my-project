@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       this.Router.navigate(['/home']);
     }
   else {
-    this.Router.navigate(['/pagenotfound']);
+    this.Router.navigate(['/error']);
   }
   }
 

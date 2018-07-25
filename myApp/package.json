@@ -26,6 +26,7 @@
     "angular-table-searcher": "^5.0.5",
     "body-parser": "^1.18.3",
     "core-js": "^2.4.1",
+    "cors": "^2.8.4",
     "datatables.net": "^1.10.16",
     "datatables.net-dt": "^1.10.16",
     "express": "^4.16.3",
